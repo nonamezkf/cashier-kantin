@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/login.css">
+{% endblock %}
+
+{%block nav%}
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">App Chasier</a>
+    </div>
+</nav>
+{%endblock%}
+
+<!-- BODY -->
+{% block content%}
+<div class="form-section">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                  <h4 class="{{ category }}">{{ message }}</h4>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h4>
+        App Chasier
+    </h4>
+    <h5>Login</h5>
+    <form action="{{url_for('index')}}" method="POST">
+        <div class="s-input mb-3">
+            <!-- <label for="">Nama</label> -->
+            <input type="text" name="email" placeholder="Masukkan Email" class="form-control" id="email">
+        </div>
+        <div class="s-input mb-3">
+            <!-- <label for="">Password</label> -->
+            <input type="password" name="password" id="password" placeholder="Masukkan Password" class="form-control">
+        </div>
+        <div class="p-btn">
+                <button class="btn btn-primary" type="submit">
+                Sign In
+                </button>           
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- #######3########  end content  ################ -->
+
+{% block externaljs %}
+<script src="../static/js/bootstrap.min.js"></script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,51 @@
+.navbar{
+    background-color:#4C4B16;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.tombol{
+    background-color: #898121;
+    font-weight: 500;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+  
+.tombol:hover{
+    color: white;
+    background-color: #dac90f;
+}
+
+.form-section{
+    /* background-color: aqua; */
+    width: 80%;
+    margin: 20px 0px;    
+}
+
+.col input{
+    margin-right: 20px;
+    width: 300px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .col input{
+        margin-right: 20px;
+        width: 200px;
+    }
+  }
+  
+  @media screen and (min-width: 577px) {
+    .nav{
+      justify-content: end;
+    }
+  
+  }
+
+

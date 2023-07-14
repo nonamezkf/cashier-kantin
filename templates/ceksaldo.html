@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/ceksaldo.css">
+{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">App Chasier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('pemesanan')}}">Pemesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('ceksaldo')}}">Cek Saldo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('riwayattransaksi')}}">Riwayat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{%block content%}
+<div class="container">
+    <form action="{{url_for('searchsiswa')}}" method="POST" class="form-section">
+        <div class="first-child-form">
+            <div class="mb-3 element-form">
+                <label for="" class="f-label">Masukkan Id Siswa</label>
+                <input class="form-control" type="number" name="idsiswa">
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit">Cek Saldo</button>
+            </div>
+        </div>
+    </form>
+
+    <section>
+        <div class="data-section card">
+            {% for data in rows %}
+            <div class="data-siswa">
+                <div id="dtsiswa-nama">
+                    <h5>Nama :</h5>
+                    <input type="text" name="" disabled value="{{data.nama}}">
+                </div>
+                <div class="dtsiswa-kelas">
+                    <h5>Kelas :</h5>
+                    <input type="number" name="" disabled value="{{data.kelas}}">
+                </div>
+            </div>
+            <div class="jml-saldo">
+                <label for="" class="label-jml-saldo">Jumlah Saldo</label>
+                <input type="number" name="" value="{{data.saldo}}" disabled>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

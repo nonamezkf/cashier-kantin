@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card-section {
+  width: 100%;
+  display: flexbox;
+  flex-wrap: wrap;
+  /* margin: auto; */
+  margin-top: 30px;
+}
+
+.card {
+  height: 130px;
+  width: 20%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: auto 0px; */
+}
+
+.card .card-num {
+  /* asd */
+}
+
+.card .card-text {
+  /* asd */
+}
+
+.quote-section {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+blockquote {
+  width: 35%;
+  height: 150px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 4px;
+  text-align: center;
+}
+
+blockquote h5 {
+  padding: 35px 10px;
+  margin: 0;
+}
+
+@media screen and(min-width:992px) {
+   
+}

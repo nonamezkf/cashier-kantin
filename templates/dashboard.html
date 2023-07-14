@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/css/dashboard.css">
+{% endblock %}
+
+{% block title %}
+    <title>Halaman Dashboard</title>
+{% endblock %}
+
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">App Chasier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('pemesanan')}}">Pemesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('ceksaldo')}}">Cek Saldo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('riwayattransaksi')}}">Riwayat</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block content%}
+<div class="card-section d-flex flex-sm-row flex-column">
+    <div class="card">
+        <h4 class="card-num">26</h4>
+        <h4 class="card-text">Produk Tersedia</h4>
+    </div>
+    <div class="card">
+        <h4 class="">26</h4>
+        <h4 class="card-text">Jumlah Transaksi <br> Hari Ini</h4>
+    </div>
+    <div class="card">
+        <h4 class="">26</h4>
+        <h4 class="card-text">Jumlah Toko</h4>
+    </div>
+</div>
+
+<div class="quote-section">
+    <blockquote>
+        <h5>AWALI KERJA DENGAN BERDOA DAN <br> SELALU BERHATI - HATI DALAM SETIAP PEKERJAAN</h5>
+    </blockquote>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- #######3########  end content  ################ -->
+
+{% block externaljs %}
+    <!-- <script src="../static/js/bootstrap.bundle.js"></script> -->
+    <!-- <script src="../static/js/bootstrap.bundle.min.js"></script> -->
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,214 @@
+.list-fnb{
+    margin-top: 20px;
+}
+
+.list-section{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(207, 207, 207);
+    margin-right: 8px;
+    /* background-color: coral; */
+}
+.cart-section{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(207, 207, 207);
+    /* background-color: aqua; */
+}
+
+.select-kategori{
+    width: 355px;
+    margin-right: 10px;
+}
+
+
+.list-view-fnb{
+    padding-top: 20px;
+}
+
+.card-fnb{
+    margin: 5px 5px;
+}
+
+.card-fnb:hover{
+    box-shadow: 5px 5px 12px #bebebe,
+             -5px -5px 12px #bebebe;
+
+}
+
+.card img{
+    width: 10rem;
+    height: 9rem;
+}
+
+/* .table .fnb-on-cart{
+    /* display: flex;
+    justify-content:space-around;
+    align-items: center;  coment//////
+    width: 100% !important;
+    padding: 5px 0px;
+    margin-top: 5px;
+    border: 1px solid rgb(207, 207, 207);
+
+
+
+
+
+
+
+ <!-- <form>
+               <table class="" style="width: 100%;">
+                    <h5>List Pembelian</h5>
+                    <div>
+                        <label>Id : </label>
+                        <input type="number" name="idsiswa">
+                    </div>
+
+                    <thead>
+                        <th>Nama Produk</th>
+                        <th>quantity</th>
+                        <th>subtotal</th>
+                        <th>Update</th>
+                        <th>Del</th>
+                    </thead>
+
+                    <tbody>
+                        {% for key, product in session['Shoppingcart'].items() %}
+                        <tr>
+                            <td>{{product.namaproduk}}</td>
+                            <form action="{{url_for('updatecart', code=key)}}" method="post">
+                            <td>
+                                <input type="number" name="quantity" value="{{product.quantity}}" style="width:25px;">
+                            </td>
+                            {% set subtotal = product.quantity|int * product.harga|int %}
+                            <td>{{subtotal}}</td>
+                            <td>
+                                <button type="submit">
+                                    <img src="../static/img/refresh-arrow.svg" alt="" style="width:20px; height: 20px;">
+                                </button>
+                            </td>
+                            </form>
+                            
+                            <td>
+                                <a href="{{url_for('deleteitem', id=key)}}">
+                                    <img src="../static/img/trash.svg" alt="" style="width:20px; height: 20px;">
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table> 
+            </form> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} */
+
+.quantity-on-cart{
+    text-align: center;
+    width: 42px;
+    padding: 0px 3px;
+}
+
+    
+   
+
+.table{
+    margin-bottom: 0;
+    padding: 0;
+    display: block;
+}
+
+.harga-total{
+    border: 1px solid rgb(207, 207, 207);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.h-tt{
+    display: flex;
+    align-items: center;
+}
+
+
+.w-tt-harga{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;  
+    padding: 10px 0px;
+    /* margin-top:10px;  */
+}
+
+.w-tt-harga button img{
+    width: 20px;
+    height: 20px;
+}
+
+.w-tt-harga a img{
+    width: 20px;
+    height: 20px;
+}
+
+.btn-card-sbmt{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p{
+    margin: 0;
+    /* padding: 0; */
+}
+
+.col{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/pemesanan.css">
+{% endblock %}
+
+{% block title %}
+    <title>Halaman Keranjang</title>
+{% endblock %}
+
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-xxl">
+        <a class="navbar-brand" href="#">App Chasier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('pemesanan')}}">Pemesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('ceksaldo')}}">Cek Saldo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('riwayattransaksi')}}">Riwayat</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('getCart')}}">Keranjang ({{ session['Shoppingcart']|length }})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block content%}
+
+<section class="">
+        <table class="table table-striped">
+            <thead>
+                <th>Nama Produk</th>
+                <th>Kuantitas</th>
+                <th>Subtotal</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {% for key, product in session['Shoppingcart'].items() %}
+                <tr>
+                    <td>{{product.namaproduk}}</td>
+                    <form action="{{url_for('updatecart', code=key)}}" method="post">
+                    <td>
+                        <input type="number" name="kuantitas" value="{{product.kuantitas}}" style="width: 30px; height: 30px; border: 1px solid; text-align: center;">
+                    </td>
+                    {% set subtotal = product.kuantitas|int * product.harga|int%}
+                    <td>{{subtotal}}</td>
+                    <td class="update-button">
+                        <button type="submit">
+                            <img src="../static/img/refresh-arrow.svg" style="width:20px; height: 20px;">
+                        </button>
+                    </td>
+                    <td>
+                        <a href="{{url_for('deleteitem', id=key)}}">
+                            <img src="../static/img/trash.svg" alt="" style="width:20px; height: 20px;">
+                        </a>
+                    </td>
+                    </form>
+                </tr>
+                {% endfor %}
+
+                <form action="{{url_for('getCart')}}" method="POST">              
+                <tr>
+                    <td colspan="2">Total Harga</td>
+                    <td class="" >
+                        <input type="" name="harga_total" value="{{grandtotal}}">
+                    </td> 
+                </tr>
+                <tr>
+                    <td>Id Siswa</td>
+                    <td>
+                        <input type="number" name="idsiswa" id="idsiswa">
+                    </td>
+                    <td></td>
+                    <td colspan="2">
+                        <button type="submit" style="width: 100%;">Order</button>
+                    </td>
+                </tr>
+                </form>
+            </tbody>
+        </table>
+</section>
+
+{% endblock %}

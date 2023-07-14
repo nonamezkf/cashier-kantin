@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{ 
+    display: flex;
+    justify-content: center;
+}
+
+.form-section{
+    margin-top: 30px;
+    width: 500px;
+    padding: 20px 20px;
+    border-radius: 3px;
+    border: 1px solid rgb(172, 171, 171);
+}
+
+.form-section h4, h5{
+    text-align: center;
+}
+
+.p-btn{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    width: 100px;
+    margin-top: 6px;
+}
